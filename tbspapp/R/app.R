@@ -116,7 +116,7 @@ ui <- fluidPage(theme=shinytheme('cosmo'),
                                                  actionButton('singheatplot', "Plot Heatmap(s)")
                                                ),
                                                mainPanel(
-                                                 plotOutput("indheat")
+                                                 plotOutput("indheat", height=800)
                                                )
                                       ),
                                       tabPanel("Boxplots of Individual Signatures",
