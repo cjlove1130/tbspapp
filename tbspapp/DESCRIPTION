@@ -1,0 +1,9 @@
+Package: tbspapp
+Type: Shiny App
+Title: User Interface for TBSignature Profiler
+Version: 0.1.0
+Author: Christian Love
+Maintainer: Christian Love <clove@bu.edu>
+Description: User interface for TBSignatureProfiler R package.
+Encoding: UTF-8
+LazyData: true
