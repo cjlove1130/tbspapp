@@ -111,6 +111,7 @@ ui <- fluidPage(theme=shinytheme('cosmo'),
                                       tabPanel("Heatmaps of Individual Signatures",
                                                sidebarPanel(
                                                  pickerInput('singheat', 'Signature(s)', choices =siglist_hivtb,multiple=F, selected =NULL),
+                                                 pickerInput('genes', label='Gene(s)',choices=NULL, options=list('actions-box'=T),multiple=T, selected = NULL),
                                                  hr(),
                                                  selectInput('singheatcovar', 'Covariate', choices =NULL),
                                                  actionButton('singheatplot', "Plot Heatmap(s)")
@@ -282,10 +283,14 @@ vals=reactiveValues(
     updateSelectInput(session, 'singheatcovar', choices = vals$covars)
   })
 
+  observe({
+    updatePickerInput(session, 'genes', choices = TBsignatures[input$singheat])
+  })
+    
   observeEvent(input$singheatplot,
                {output$indheat=renderPlot({
                  print(signatureGeneHeatmap(inputData = vals$profilerdat, useAssay = input$profassay,
-                                      TBsignatures[[input$singheat]],
+                                      input$genes,
                                       signatureColNames = input$singheat,
                                       annotationColNames = input$singheatcovar,
                                       showColumnNames = TRUE))
