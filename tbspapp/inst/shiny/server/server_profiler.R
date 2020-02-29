@@ -7,7 +7,7 @@ output$assays=renderTable({
 }, colnames = F)
 
 observeEvent(input$runprofiler,{
-  output$visdat=renderDataTable(
+  output$visdat=DT::renderDataTable(
     head(as.data.frame(colData(vals$profilerdat))), options=list(scrollX=T)
   )
   })
@@ -32,7 +32,7 @@ observe({
 })
 
 observeEvent(input$runprofiler,{
-  vals$profilerdat=isolate(runTBsigProfiler(vals$tbdat, useAssay = input$profassay, signatures = TBsignatures[input$selectsigs], algorithm = input$profalg, combineSigAndAlgorithm = T, parallel.sz = 4))
+  vals$profilerdat=isolate(runTBsigProfiler(vals$tbdat, useAssay = input$profassay, signatures = TBsignatures, algorithm = input$profalg, combineSigAndAlgorithm = T, parallel.sz = 4))
     })
 
 

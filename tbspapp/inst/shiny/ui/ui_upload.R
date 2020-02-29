@@ -63,6 +63,6 @@ tabPanel("Upload Data",
                                              )
                             )
            ),
-           dataTableOutput("counttable", width = 700)
+           DT::dataTableOutput("counttable", width = 700)
          )
 )

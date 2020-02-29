@@ -1,10 +1,10 @@
 navbarMenu("AUCs Via Bootstrapping",
            tabPanel("T-tests & AUC",
-                    DT::dataTableOutput("ttest") %>% withSpinner()
+                    DT::dataTableOutput("ttest") %>% shinycssloaders::withSpinner()
            ),
            tabPanel("Boxplots for the bootstrapped AUCs",
                     sidebarPanel(
-                      pickerInput('bootsigs', "Select Signatures", choices =siglist_hivtb, options=list('actions-box'=T),multiple=T, selected =NULL),
+                      pickerInput('bootsigs', "Select Signatures", choices =siglist, options=list('actions-box'=T),multiple=T, selected =NULL),
                       actionButton('bootplot', "Plot Bootstrapped AUCs")
                     ),
                     mainPanel(plotOutput("bootbox", height = 600)
@@ -12,7 +12,7 @@ navbarMenu("AUCs Via Bootstrapping",
            ),
            tabPanel("Separate ROC plots, 95% CI Bands",
                     sidebarPanel(
-                      pickerInput('singroc', 'Select Signature(s)', choices =siglist_hivtb, options=list('actions-box'=T),multiple=T, selected =NULL),
+                      pickerInput('singroc', 'Select Signature(s)', choices =siglist, options=list('actions-box'=T),multiple=T, selected =NULL),
                       actionButton("rocplot", "Plot ROC Curve")
                     ),
                     mainPanel(

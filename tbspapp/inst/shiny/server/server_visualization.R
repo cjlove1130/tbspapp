@@ -2,7 +2,7 @@ observe({
   if(is.null(vals$profilerdat)){
     updatePickerInput(session, 'selectsigs', choices=NULL)
   }
-  else{isolate(updatePickerInput(session, 'selectsigs', choices = subset(siglist_hivtb, siglist_hivtb %in% colnames(colData(vals$profilerdat))), selected=subset(siglist_hivtb, siglist_hivtb %in% colnames(colData(vals$profilerdat)))))
+  else{isolate(updatePickerInput(session, 'selectsigs', choices = subset(siglist, siglist %in% colnames(colData(vals$profilerdat))), selected=subset(siglist, siglist %in% colnames(colData(vals$profilerdat)))))
   }
   })
 
@@ -32,7 +32,7 @@ observe({
   if(is.null(vals$profilerdat)){
     updatePickerInput(session, 'singheat', choices=NULL)
   }
-  else{updatePickerInput(session, 'singheat', choices = subset(siglist_hivtb, siglist_hivtb %in% colnames(colData(vals$profilerdat))))
+  else{updatePickerInput(session, 'singheat', choices = subset(siglist, siglist %in% colnames(colData(vals$profilerdat))))
   }
 })
 
@@ -53,7 +53,7 @@ observe({
   if(is.null(vals$profilerdat)){
     updatePickerInput(session, 'singbox', choices=NULL)
   }
-  else{updatePickerInput(session, 'singbox', choices = subset(siglist_hivtb, siglist_hivtb %in% colnames(colData(vals$profilerdat))))
+  else{updatePickerInput(session, 'singbox', choices = subset(siglist, siglist %in% colnames(colData(vals$profilerdat))))
   }
 })
 
@@ -71,7 +71,7 @@ observe({
   if(is.null(vals$profilerdat)){
     updateSelectInput(session, 'singcomp', choices=NULL)
   }
-  else{updateSelectInput(session, 'singcomp', choices = subset(siglist_hivtb, siglist_hivtb %in% colnames(colData(vals$profilerdat))))
+  else{updateSelectInput(session, 'singcomp', choices = subset(siglist, siglist %in% colnames(colData(vals$profilerdat))))
   }
 })
 

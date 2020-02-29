@@ -1,4 +1,4 @@
-output$ttest=renderDataTable({
+output$ttest=DT::renderDataTable({
   tableAUC(vals$profilerdat,
            annotationColName = "Disease",
            signatureColNames = names(TBsignatures),
@@ -10,7 +10,7 @@ observe({
   if(is.null(vals$profilerdat)){
     updatePickerInput(session, 'bootsigs', choices=NULL)
   }
-  else{updatePickerInput(session, 'bootsigs', choices = subset(siglist_hivtb, siglist_hivtb %in% colnames(colData(vals$profilerdat))))
+  else{updatePickerInput(session, 'bootsigs', choices = subset(siglist, siglist %in% colnames(colData(vals$profilerdat))))
   }
 })
 
@@ -26,7 +26,7 @@ observe({
   if(is.null(vals$profilerdat)){
     updatePickerInput(session, 'singroc', choices=NULL)
   }
-  else{updatePickerInput(session, 'singroc', choices = subset(siglist_hivtb, siglist_hivtb %in% colnames(colData(vals$profilerdat))))
+  else{updatePickerInput(session, 'singroc', choices = subset(siglist, siglist %in% colnames(colData(vals$profilerdat))))
   }
 })
 

@@ -5,7 +5,7 @@ if("markdown" %in% rownames(installed.packages()) == FALSE) {install.packages("m
 if("DT" %in% rownames(installed.packages()) == FALSE) {install.packages("DT")}
 if("BiocManager" %in% rownames(installed.packages()) == FALSE) {install.packages("BiocManager")}
 if("SummarizedExperiment" %in% rownames(installed.packages()) == FALSE) {install.packages("SummarizedExperiment")}
-if("TBSignatureProfiler" %in% rownames(installed.packages()) == FALSE) {install.packages("TBSignatureProfiler")}
+if("TBSignatureProfiler" %in% rownames(installed.packages()) == FALSE) {devtools::install_github("compbiomed/TBSignatureProfiler")}
 if("shinycssloaders" %in% rownames(installed.packages()) == FALSE) {install.packages("shinycssloaders")}
 
 library(shiny)
@@ -19,7 +19,7 @@ library(TBSignatureProfiler)
 library(shinycssloaders)
 
 
-siglist_hivtb=names(TBsignatures)
+siglist=names(TBsignatures)
 
 ui <- fluidPage(theme=shinytheme('cosmo'),
                 navbarPage("TB Signature Profiler",

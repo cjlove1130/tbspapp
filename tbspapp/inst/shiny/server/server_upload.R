@@ -33,8 +33,21 @@ observeEvent(input$upload,{
 })
 
 observeEvent(input$upload,{
-  output$counttable=renderDataTable(
+  output$counttable=DT::renderDataTable(
   as.data.frame(assays(head(vals$tbdat, n=20L))), options=list(scrollX=T)
 )
+  vals$profilerdat=NULL
   })
+
+observeEvent(input$upload,{
+  output$visdat=renderDataTable(NULL)
+  output$allheat=NULL
+  output$indheat=NULL
+  output$boxplotind=NULL
+  output$heatcomp=NULL
+  output$bootbox=NULL
+  output$rocsep=NULL
+})
+
+
 
