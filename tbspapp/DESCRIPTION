@@ -6,4 +6,4 @@ Author: Christian Love
 Maintainer: Christian Love <clove@bu.edu>
 Description: User interface for TBSignatureProfiler R package.
 Encoding: UTF-8
-LazyData: true
+LazyData: TRUE

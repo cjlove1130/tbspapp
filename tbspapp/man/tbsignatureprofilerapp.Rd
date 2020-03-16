@@ -30,7 +30,7 @@ Christian Love
 \examples{
 #Open the application
 if(interactive()){
-tbsignatureprofilerapp()
+TBSPapp()
 }
 }
 

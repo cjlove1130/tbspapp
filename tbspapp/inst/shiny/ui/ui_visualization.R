@@ -38,7 +38,7 @@ navbarMenu("Signature Visualization",
                       selectInput('singcomp', 'Select Signature', choices =siglist ),
                       selectInput('compassay', 'Select Assay', choices = NULL),
                       selectInput('compcovar', "Select Covariate", choices = NULL),
-                      pickerInput('compalg', 'Select Algorithms', choices = c("GSVA", "ssGSEA", "ASSIGN", "singscore", "PLAGE", "Zscore"),options=list('actions-box'=T),multiple=T, selected =NULL),
+                      pickerInput('compalg', 'Select Algorithms', choices = c("GSVA", "ssGSEA", "singscore", "PLAGE", "Zscore", "ASSIGN"),options=list('actions-box'=T),multiple=T, selected =NULL),
                       actionButton('compplot', "Plot Heatmap")
                     ),
                     mainPanel(
